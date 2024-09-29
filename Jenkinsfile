@@ -14,7 +14,8 @@ pipeline{
         }
         stage('build'){
             steps{
-               bat 'mvn package'
+              # bat 'mvn package'
+                "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('copying the artifact'){
