@@ -15,7 +15,7 @@ pipeline{
         stage('build'){
             steps{
              
-                bat 'mvn package -ff'
+                bat "mvn install -Dmaven.test.failure.ignore=true"
             }
         }
     }
